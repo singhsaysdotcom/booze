@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<nav>
+  <ul>
+    <li class="selected">Indexes</li>
+  </ul>
+</nav>
+
+<div class="panel">
+  <h2>Server Information:</h2>
+  <table>
+    <tr><td>version</td><td>0.1.0</td></tr>
+  </table>
+</div>
+
+<div class="panel">
+  <h2>Statistics:</h2>
+  <table>
+    <tr><td>indexes</td><td data-bind="text: indexes().length"/></tr>
+    <tr><td>documents</td><td>1</td></tr>
+    <tr><td>total index size</td><td>1</td></tr>
+    <tr><td>total document size</td><td>1</td></tr>
+  </table>
+</div>
+<!--
+<ul class="indexes" data-bind="foreach: indexes()">
+  <li data-bind="text: $data"/>
+</ul>
+-->
+{% endblock content %}
