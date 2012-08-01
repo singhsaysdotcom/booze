@@ -13,4 +13,3 @@ booze offers client libraries in python and ruby currently (more to be added in 
 ##How do i use booze in my application
 
 ##Known Issues
-
