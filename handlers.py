@@ -8,8 +8,16 @@ import webapp2
 
 from google.appengine.api import search
 
+version_file = os.path.join(os.path.dirname(__file__), 'version')
 template_path = os.path.join(os.path.dirname(__file__), 'templates')
 env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_path))
+
+
+def get_version():
+  f = open(version_file)
+  version = f.read()
+  f.close()
+  return version
 
 
 def _list_to_documents(documents):
@@ -38,7 +46,7 @@ class TemplateHandler(webapp2.RequestHandler):
 
 class Status(TemplateHandler):
   def get(self):
-    self.render('index.html')
+    self.render('index.html', {'version': get_version()})
 
 
 class IndexesHandler(TemplateHandler):
